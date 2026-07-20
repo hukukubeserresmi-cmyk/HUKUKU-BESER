@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script>(function(){try{if(localStorage.getItem('hb-isik-modu')==='acik'){document.documentElement.classList.add('aydinlik-mod');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İletişim | Hukuk-u Beşer</title>
+<meta name="description" content="Hukuk-u Beşer ile iletişime geçin — mesaj formu ve sosyal medya bağlantıları.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="yildiz-alani" aria-hidden="true"></canvas>
+
+<button id="isik-dugmesi" class="isik-dugmesi" type="button" aria-pressed="false" aria-label="Işığı aç/kapat">
+  <svg class="ampul-ikon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.5a6.5 6.5 0 0 0-3.7 11.83c.55.4.95 1.1.95 1.92V16.5a1 1 0 0 0 1 1h3.5a1 1 0 0 0 1-1v-.25c0-.82.4-1.52.95-1.92A6.5 6.5 0 0 0 12 2.5Z"/>
+    <line x1="10" y1="20.25" x2="14" y2="20.25"/>
+    <line x1="10.6" y1="18.3" x2="13.4" y2="18.3"/>
+  </svg>
+</button>
+
+<header class="site-header">
+  <nav class="nav-cubugu">
+    <a href="index.html" class="marka">
+      <span class="marka-ad">Hukuk-u Beşer</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüyü aç/kapat" onclick="document.querySelector('.nav-menu').classList.toggle('acik')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="yazilar.html">Yazılar</a></li>
+      <li><a href="arsiv.html">Arşiv</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="iletisim.html" class="aktif">İletişim</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="sayfa-basligi">
+    <div class="konteyner">
+      <span class="ust-baslik-etiketi">Bağ Kurun</span>
+      <h1>İletişim</h1>
+      <p class="bolum-aciklama" style="margin:0 auto;">Fikirdaşlarımız ve okuyucularımızla doğrudan temas kurduğumuz alan.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="konteyner">
+      <div class="iletisim-izgara">
+
+        <form class="iletisim-form" onsubmit="return mesajGonder(event)">
+          <div class="form-grup">
+            <label for="ad">Ad Soyad</label>
+            <input type="text" id="ad" name="ad" placeholder="Adınız ve soyadınız" required>
+          </div>
+          <div class="form-grup">
+            <label for="eposta">E-posta</label>
+            <input type="email" id="eposta" name="eposta" placeholder="ornek@eposta.com" required>
+          </div>
+          <div class="form-grup">
+            <label for="konu">Konu</label>
+            <input type="text" id="konu" name="konu" placeholder="Mesajınızın konusu">
+          </div>
+          <div class="form-grup">
+            <label for="mesaj">Mesaj</label>
+            <textarea id="mesaj" name="mesaj" placeholder="Mesajınızı buraya yazın..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-birincil">Mesajı Gönder</button>
+        </form>
+
+        <div class="iletisim-yan">
+          <div class="iletisim-kart">
+            <h4>Doğrudan Yazın</h4>
+            <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=hukukubeserresmi@gmail.com" target="_blank" rel="noopener" class="eposta-linki">hukukubeserresmi@gmail.com</a></p>
+          </div>
+          <div class="iletisim-kart">
+            <h4>Basın ve İşbirliği</h4>
+            <p>basin@hukukubeser.org</p>
+          </div>
+          <div class="iletisim-kart">
+            <h4>Bizi Takip Edin</h4>
+            <div class="sosyal-linkler">
+              <a href="#" target="_blank" rel="noopener">X / Twitter</a>
+              <a href="#" target="_blank" rel="noopener">Instagram</a>
+              <a href="#" target="_blank" rel="noopener">YouTube</a>
+              <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="konteyner">
+    <span class="marka-ad">Hukuk-u Beşer</span>
+    <ul class="footer-menu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="yazilar.html">Yazılar</a></li>
+      <li><a href="arsiv.html">Arşiv</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+    <p class="footer-alt">© 2026 Hukuk-u Beşer. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+<script src="yildizlar.js"></script>
+<script src="isik.js"></script>
+<script>
+function mesajGonder(e) {
+  e.preventDefault();
+  var buton = e.target.querySelector('button[type="submit"]');
+  var eskiMetin = buton.textContent;
+  buton.textContent = 'Gönderildi ✓';
+  buton.style.opacity = '0.75';
+  setTimeout(function(){
+    buton.textContent = eskiMetin;
+    buton.style.opacity = '1';
+    e.target.reset();
+  }, 2200);
+  return false;
+}
+</script>
+
+</body>
+</html>

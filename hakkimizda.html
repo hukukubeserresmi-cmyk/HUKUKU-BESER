@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script>(function(){try{if(localStorage.getItem('hb-isik-modu')==='acik'){document.documentElement.classList.add('aydinlik-mod');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hakkımızda | Hukuk-u Beşer</title>
+<meta name="description" content="Hukuk-u Beşer'in kuruluş amacı, fikri, hukuki ve toplumsal duruşu.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="yildiz-alani" aria-hidden="true"></canvas>
+
+<button id="isik-dugmesi" class="isik-dugmesi" type="button" aria-pressed="false" aria-label="Işığı aç/kapat">
+  <svg class="ampul-ikon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.5a6.5 6.5 0 0 0-3.7 11.83c.55.4.95 1.1.95 1.92V16.5a1 1 0 0 0 1 1h3.5a1 1 0 0 0 1-1v-.25c0-.82.4-1.52.95-1.92A6.5 6.5 0 0 0 12 2.5Z"/>
+    <line x1="10" y1="20.25" x2="14" y2="20.25"/>
+    <line x1="10.6" y1="18.3" x2="13.4" y2="18.3"/>
+  </svg>
+</button>
+
+<header class="site-header">
+  <nav class="nav-cubugu">
+    <a href="index.html" class="marka">
+      <span class="marka-ad">Hukuk-u Beşer</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüyü aç/kapat" onclick="document.querySelector('.nav-menu').classList.toggle('acik')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="yazilar.html">Yazılar</a></li>
+      <li><a href="arsiv.html">Arşiv</a></li>
+      <li><a href="hakkimizda.html" class="aktif">Hakkımızda</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="sayfa-basligi">
+    <div class="konteyner">
+      <span class="ust-baslik-etiketi">Manifesto</span>
+      <h1>Hakkımızda</h1>
+      <p class="bolum-aciklama" style="margin:0 auto;">Hukuk-u Beşer'in kuruluş amacı, fikri, hukuki ve toplumsal duruşu üzerine.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="konteyner">
+      <article class="manifesto-govde">
+
+        <h2>Biz Kimiz</h2>
+        <p>
+          Bu platform; biri Brezilya'da, biri Türkiye'de yaşayan iki gür hisli Türk öğrenci tarafından te'sis edilip kurulmuştur.
+        </p>
+
+        <div class="kurucular-izgara">
+          <div class="kurucu-kart">
+            <span class="kurucu-avatar">ZA</span>
+            <span class="kurucu-ad">Zeynep Ali</span>
+            <span class="kurucu-rol">Kurucu Ortak · Brezilya</span>
+          </div>
+          <div class="kurucu-kart">
+            <span class="kurucu-avatar">YG</span>
+            <span class="kurucu-ad">Yakup Güngör</span>
+            <span class="kurucu-rol">Kurucu Ortak · Türkiye</span>
+          </div>
+        </div>
+
+        <p class="vurgu">
+          Zulmü alkışlayamam, zâlimi asla sevemem — bu mısra bizim için bir dize değil, bir ahittir.
+        </p>
+
+        <h2>Neden Var Olduk</h2>
+        <p>
+          Çağımızın en büyük tehlikesi, zulmün açıkça işlenmesi değil; ona karşı sessizliğin normalleşmesidir. Adaletsizlik, üzerine söz söylenmediği her an biraz daha sıradanlaşır, biraz daha "gündelik" hâle gelir. Hukuk-u Beşer, bu sessizliğe ortak olmamak için kuruldu. Gayemiz; hakkı çiğnenmiş, toprakları yağmalanmış ve varlıkları tarumar edilmiş tüm mazlum halkların feryadını toplumsal vicdanın gür sesiyle buluşturmaktır.
+        </p>
+
+        <p>
+          Biz ne bir parti, ne bir mezhep, ne de bir hizbin sözcüsüyüz. Tek bir tarafımız var: mazlumun tarafı. Tek bir hasmımız var: zulmün kendisi. Bu, siyasî bir konumlanma değil; insan olmanın asgari şartıdır.
+        </p>
+
+        <h2>Fikri Duruşumuz</h2>
+        <p>
+          İnsan hakları, iktidarların lütfu değil; her insanın doğuştan sahip olduğu, devredilemez bir hakikattir. Hukuk-u Beşer, bu hakikatin hiçbir gerekçeyle — ne "güvenlik", ne "düzen", ne "gelenek", ne de "çoğunluğun iradesi" adına — ihlal edilemeyeceğini savunur. Adalet, güçlünün insafına bırakıldığı an adalet olmaktan çıkar; bir imtiyaza dönüşür. Biz imtiyazın değil, hakkın peşindeyiz.
+        </p>
+
+        <ul class="ilke-listesi">
+          <li><strong>Hakikate sadakat:</strong> Rahatsız etse dahi, doğruyu söylemekten çekinmeyiz.</li>
+          <li><strong>Mazlumdan yana oluş:</strong> Güçlünün değil, hakkı elinden alınanın yanında dururuz.</li>
+          <li><strong>Hafızanın korunması:</strong> Unutturulmak istenen her hakikati kayıt altına alırız.</li>
+          <li><strong>Edebî sorumluluk:</strong> Kelâmın gücünü, adalet davasının hizmetine sunarız.</li>
+          <li><strong>Bağımsızlık:</strong> Hiçbir siyasi, ticari ya da ideolojik çıkarın vesayetini kabul etmeyiz.</li>
+        </ul>
+
+        <h2>Hukuki Duruşumuz</h2>
+        <p>
+          İnsan Hakları Evrensel Beyannamesi'nin ilk maddesinde yazılan "Bütün insanlar hür, haysiyet ve haklar bakımından eşit doğarlar" ilkesini, soyut bir metin değil, her gün yeniden savunulması gereken canlı bir yükümlülük olarak görüyoruz. Hukuk devletinin, ancak hiç kimseyi — ne en güçsüzü ne de en güçlüyü — hukukun üstünde ya da altında tutmadığında var olabileceğine inanıyoruz. Geciken adalet inkâra mahkûmdur; hakkın sesini kısmak ise zulmün en sinsi biçimi, şekli ve tezahürüdür.
+        </p>
+
+        <h2>Toplumsal Duruşumuz</h2>
+        <p>
+          Bu platform, akademisyenden işçiye, şairden hukukçuya, gazeteciden sıradan yurttaşa kadar; adaletin herkesin meselesi olduğuna inanan herkese açık bir alandır. Zulmü alkışlamamayı bir erdem değil, asgari bir insanlık ödevi sayıyoruz. Sessiz kalmanın da bir tercih, bazen de bir suç ortaklığı olduğunu biliyoruz.
+        </p>
+
+        <p>
+          Hukuk-u Beşer, büyük iddialarla değil; küçük ama ısrarlı bir sadakatle yol alır: her satırda, her görselde, her sesle, adaletin yanında durmaya devam edeceğiz. Kesilir belki, fakat çekmeye gelmez boyunumuz.
+        </p>
+
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="konteyner">
+    <span class="marka-ad">Hukuk-u Beşer</span>
+    <ul class="footer-menu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="yazilar.html">Yazılar</a></li>
+      <li><a href="arsiv.html">Arşiv</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+    <p class="footer-alt">© 2026 Hukuk-u Beşer. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+<script src="yildizlar.js"></script>
+<script src="isik.js"></script>
+</body>
+</html>

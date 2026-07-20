@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script>(function(){try{if(localStorage.getItem('hb-isik-modu')==='acik'){document.documentElement.classList.add('aydinlik-mod');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hukuk-u Beşer | Ana Sayfa</title>
+<meta name="description" content="Hukuk-u Beşer — adalet, edebiyat ve toplumsal vicdan üzerine kurulu bağımsız bir düşünce platformu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="yildiz-alani" aria-hidden="true"></canvas>
+
+<button id="isik-dugmesi" class="isik-dugmesi" type="button" aria-pressed="false" aria-label="Işığı aç/kapat">
+  <svg class="ampul-ikon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.5a6.5 6.5 0 0 0-3.7 11.83c.55.4.95 1.1.95 1.92V16.5a1 1 0 0 0 1 1h3.5a1 1 0 0 0 1-1v-.25c0-.82.4-1.52.95-1.92A6.5 6.5 0 0 0 12 2.5Z"/>
+    <line x1="10" y1="20.25" x2="14" y2="20.25"/>
+    <line x1="10.6" y1="18.3" x2="13.4" y2="18.3"/>
+  </svg>
+</button>
+
+<header class="site-header">
+  <nav class="nav-cubugu">
+    <a href="index.html" class="marka">
+      <span class="marka-ad">Hukuk-u Beşer</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüyü aç/kapat" onclick="document.querySelector('.nav-menu').classList.toggle('acik')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="aktif">Ana Sayfa</a></li>
+      <li><a href="yazilar.html">Yazılar</a></li>
+      <li><a href="arsiv.html">Arşiv</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="konteyner">
+      <span class="ust-baslik-etiketi">İnsan Hakları Müdafaa ve Arşiv Platformu</span>
+      <h1>Ne sağdan, ne soldan; adaletin yolundan.</h1>
+      <p class="hero-alt">Hukuk-u Beşer; hakikatin, adaletin ve vicdanın gür sesini edebi bir dille yükselten; hakkı çiğnenmişlerin mücadelesini zengin bir medya arşiviyle aynen yansıtan bağımsız bir platformdur.</p>
+    </div>
+  </section>
+
+  <!-- ŞİİR BLOĞU -->
+  <section class="siir-bolumu">
+    <div class="konteyner">
+      <div class="siir-cerceve">
+        <img class="siir-portre" src="Mehmet%20Akif%20ersoy.jpg" alt="Mehmet Âkif Ersoy, Mısır çölünde deve üzerinde">
+        <div class="siir-ust">
+          <span class="ust-baslik-etiketi">Duruşumuzu Simgeleyen Eser</span>
+          <h2 class="siir-baslik">Zulmü Alkışlayamam</h2>
+          <span class="siir-yazar">Mehmet Âkif Ersoy</span>
+        </div>
+
+        <div class="siir-metin">
+          <p>
+            Zulmü alkışlayamam, zalimi asla sevemem;<br>
+            Gelenin keyfi için geçmişe kalkıp sövemem.<br>
+            Biri ecdadıma saldırdı mı, hattâ boğarım!...<br>
+            —Boğamazsın ki!<br>
+            —Hiç olmazsa yanımdan kovarım.<br>
+            Üçbuçuk soysuzun ardından zağarlık yapamam;<br>
+            Hele hak nâmına haksızlığa ölsem tapamam.
+          </p>
+          <p>
+            Doğduğumdan beridir, âşığım istiklâle;<br>
+            Bana hiç tasmalık etmiş değil altın lâle!<br>
+            Yumuşak başlı isem, kim dedi uysal koyunum?<br>
+            Kesilir belki, fakat çekmeye gelmez boyunum!<br>
+            Kanayan bir yara gördüm mü yanar tâ ciğerim,<br>
+            Onu dindirmek için kamçı yerim, çifte yerim!
+          </p>
+          <p>
+            Adam aldırmada geç git!, diyemem aldırırım.<br>
+            Çiğnerim, çiğnenirim, hakkı tutar kaldırırım!<br>
+            Zâlimin hasmıyım ammâ severim mazlûmu...<br>
+            İrticâın şu sizin lehçede ma'nâsı bu mu?
+          </p>
+        </div>
+
+        <div class="siir-imza">Safahat</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANİFESTO ÖZETİ -->
+  <section class="manifesto-ozet">
+    <div class="konteyner" style="max-width:760px; text-align:center; padding:20px 32px 90px;">
+      <span class="ust-baslik-etiketi">Kısa Manifesto</span>
+      <h2 class="bolum-basligi">Sözün adalet için var olduğuna inanıyoruz.</h2>
+      <p class="bolum-aciklama" style="margin:0 auto;">
+        Ne sağdan ne soldan, sadece adaletin yolundan giderek; zulme karşı susmayı değil hareketi, uyumayı değil uyanmayı ve uyandırmayı seçiyoruz.
+      </p>
+      <div class="ayrac orta"></div>
+      <a href="hakkimizda.html" class="btn btn-ikincil">Manifestonun Tamamını Oku</a>
+    </div>
+  </section>
+
+  <!-- YÖNLENDİRME KARTLARI -->
+  <section class="yonlendirme">
+    <div class="konteyner" style="padding-bottom:120px;">
+      <span class="ust-baslik-etiketi">Platformda Gezinin</span>
+      <p class="bolum-aciklama">Hukuk-u Beşer'in bütün odaları, aynı adalet duruşuna açılır.</p>
+
+      <div class="kart-izgara">
+        <a href="yazilar.html" class="kart">
+          <span class="kart-numara">01 / Yazılar</span>
+          <h3>Yazılar</h3>
+          <p>Şiirler, makaleler ve denemeler — düşüncenin ve edebiyatın adalet arayışındaki izdüşümü.</p>
+          <span class="kart-link">Yazılara Git →</span>
+        </a>
+        <a href="arsiv.html" class="kart">
+          <span class="kart-numara">02 / Hafıza</span>
+          <h3>Medya Arşivi</h3>
+          <p>Görsel hafızamız — fotoğraflar ve video çalışmalarıyla tanıklığın belgesi.</p>
+          <span class="kart-link">Arşive Git →</span>
+        </a>
+        <a href="hakkimizda.html" class="kart">
+          <span class="kart-numara">03 / Duruş</span>
+          <h3>Hakkımızda</h3>
+          <p>Hukuk-u Beşer'in kuruluş amacı, fikri ve toplumsal duruşu üzerine derinlikli bir metin.</p>
+          <span class="kart-link">Hakkımızda'yı Oku →</span>
+        </a>
+        <a href="iletisim.html" class="kart">
+          <span class="kart-numara">04 / Bağ</span>
+          <h3>İletişim</h3>
+          <p>Fikirdaşlarımız ve okuyucularımızla doğrudan bağ kurduğumuz alan.</p>
+          <span class="kart-link">Bize Ulaşın →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="konteyner">
+    <span class="marka-ad">Hukuk-u Beşer</span>
+    <ul class="footer-menu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="yazilar.html">Yazılar</a></li>
+      <li><a href="arsiv.html">Arşiv</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+    <p class="footer-alt">© 2026 Hukuk-u Beşer. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+<script src="yildizlar.js"></script>
+<script src="isik.js"></script>
+</body>
+</html>

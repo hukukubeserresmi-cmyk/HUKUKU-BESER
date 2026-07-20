@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<script>(function(){try{if(localStorage.getItem('hb-isik-modu')==='acik'){document.documentElement.classList.add('aydinlik-mod');}}catch(e){}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yazılar / Eserler | Hukuk-u Beşer</title>
+<meta name="description" content="Hukuk-u Beşer platformunun şiir, makale ve deneme arşivi.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="yildiz-alani" aria-hidden="true"></canvas>
+
+<button id="isik-dugmesi" class="isik-dugmesi" type="button" aria-pressed="false" aria-label="Işığı aç/kapat">
+  <svg class="ampul-ikon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.5a6.5 6.5 0 0 0-3.7 11.83c.55.4.95 1.1.95 1.92V16.5a1 1 0 0 0 1 1h3.5a1 1 0 0 0 1-1v-.25c0-.82.4-1.52.95-1.92A6.5 6.5 0 0 0 12 2.5Z"/>
+    <line x1="10" y1="20.25" x2="14" y2="20.25"/>
+    <line x1="10.6" y1="18.3" x2="13.4" y2="18.3"/>
+  </svg>
+</button>
+
+<header class="site-header">
+  <nav class="nav-cubugu">
+    <a href="index.html" class="marka">
+      <span class="marka-ad">Hukuk-u Beşer</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menüyü aç/kapat" onclick="document.querySelector('.nav-menu').classList.toggle('acik')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="yazilar.html" class="aktif">Yazılar</a></li>
+      <li><a href="arsiv.html">Arşiv</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="sayfa-basligi">
+    <div class="konteyner">
+      <span class="ust-baslik-etiketi">Yazılar</span>
+      <h1>Şiirler, Makaleler, Denemeler</h1>
+      <p class="bolum-aciklama" style="margin:0 auto;">Düşüncenin ve edebiyatın adalet arayışındaki izdüşümü. Aşağıdan bir tür seçin.</p>
+    </div>
+  </section>
+
+  <section id="eser-bolumu">
+    <div class="konteyner" style="padding:56px 32px 120px;">
+
+      <div class="filtre-grubu" role="tablist" aria-label="Eser türü filtreleri">
+        <button class="filtre-btn aktif" data-hedef="panel-siirler" onclick="turSec('panel-siirler', this)">Şiirler</button>
+        <button class="filtre-btn" data-hedef="panel-makaleler" onclick="turSec('panel-makaleler', this)">Makaleler</button>
+        <button class="filtre-btn" data-hedef="panel-denemeler" onclick="turSec('panel-denemeler', this)">Denemeler</button>
+      </div>
+
+      <!-- ŞİİRLER -->
+      <div id="panel-siirler" class="yazi-panel gorunur">
+        <h2 class="bolum-basligi" style="font-size:1.5rem; margin-top:0;">Şiirler</h2>
+        <div class="yazi-listesi">
+          <div class="yazi-satiri">
+            <div>
+              <h4>Sükût Bir Cevap Değildir</h4>
+              <p>Yer tutucu metin — bu bölüme şiirin tam metni eklenecektir.</p>
+            </div>
+            <span class="yazi-tarih">Yakında</span>
+          </div>
+          <div class="yazi-satiri">
+            <div>
+              <h4>Mazlumun Defteri</h4>
+              <p>Yer tutucu metin — bu bölüme şiirin tam metni eklenecektir.</p>
+            </div>
+            <span class="yazi-tarih">Yakında</span>
+          </div>
+          <div class="yazi-satiri">
+            <div>
+              <h4>Adaletin Gölgesinde</h4>
+              <p>Yer tutucu metin — bu bölüme şiirin tam metni eklenecektir.</p>
+            </div>
+            <span class="yazi-tarih">Yakında</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAKALELER -->
+      <div id="panel-makaleler" class="yazi-panel">
+        <h2 class="bolum-basligi" style="font-size:1.5rem; margin-top:0;">Makaleler</h2>
+        <div class="yazi-listesi">
+          <div class="yazi-satiri">
+            <div>
+              <h4>Hukuk-u Beşer'in Kısa Tarihi</h4>
+              <p>Yer tutucu metin — bu bölüme makalenin tam metni eklenecektir.</p>
+            </div>
+            <span class="yazi-tarih">Yakında</span>
+          </div>
+          <div class="yazi-satiri">
+            <div>
+              <h4>Adalet ve Vicdan Üzerine</h4>
+              <p>Yer tutucu metin — bu bölüme makalenin tam metni eklenecektir.</p>
+            </div>
+            <span class="yazi-tarih">Yakında</span>
+          </div>
+          <div class="yazi-satiri">
+            <div>
+              <h4>Söz ve Sorumluluk</h4>
+              <p>Yer tutucu metin — bu bölüme makalenin tam metni eklenecektir.</p>
+            </div>
+            <span class="yazi-tarih">Yakında</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DENEMELER -->
+      <div id="panel-denemeler" class="yazi-panel">
+        <h2 class="bolum-basligi" style="font-size:1.5rem; margin-top:0;">Denemeler</h2>
+        <div class="yazi-listesi">
+          <div class="yazi-satiri">
+            <div>
+              <h4>Hafızanın Sorumluluğu</h4>
+              <p>Yer tutucu metin — bu bölüme denemenin tam metni eklenecektir.</p>
+            </div>
+            <span class="yazi-tarih">Yakında</span>
+          </div>
+          <div class="yazi-satiri">
+            <div>
+              <h4>Kayıtsızlığın Bedeli</h4>
+              <p>Yer tutucu metin — bu bölüme denemenin tam metni eklenecektir.</p>
+            </div>
+            <span class="yazi-tarih">Yakında</span>
+          </div>
+          <div class="yazi-satiri">
+            <div>
+              <h4>Bir Satırlık Direniş</h4>
+              <p>Yer tutucu metin — bu bölüme denemenin tam metni eklenecektir.</p>
+            </div>
+            <span class="yazi-tarih">Yakında</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="konteyner">
+    <span class="marka-ad">Hukuk-u Beşer</span>
+    <ul class="footer-menu">
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="yazilar.html">Yazılar</a></li>
+      <li><a href="arsiv.html">Arşiv</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="iletisim.html">İletişim</a></li>
+    </ul>
+    <p class="footer-alt">© 2026 Hukuk-u Beşer. Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+<script src="yildizlar.js"></script>
+<script src="isik.js"></script>
+<script>
+function turSec(hedefId, dugme) {
+  document.querySelectorAll('.filtre-btn').forEach(function(b){ b.classList.remove('aktif'); });
+  dugme.classList.add('aktif');
+
+  document.querySelectorAll('.yazi-panel').forEach(function(p){ p.classList.remove('gorunur'); });
+  var hedef = document.getElementById(hedefId);
+  hedef.classList.add('gorunur');
+
+  hedef.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+</body>
+</html>
