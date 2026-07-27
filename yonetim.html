@@ -22,17 +22,21 @@
 <header class="site-header">
   <nav class="nav-cubugu">
     <a href="index.html" class="marka">
+      <!-- LOGO-BASLA -->
       <span class="marka-ad">Hukuk-u Beşer</span>
+      <!-- LOGO-BITIS -->
     </a>
     <button class="nav-toggle" aria-label="Menüyü aç/kapat" onclick="document.querySelector('.nav-menu').classList.toggle('acik')">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-menu">
+      <!-- MENU-BASLA -->
       <li><a href="index.html">Ana Sayfa</a></li>
       <li><a href="yazilar.html">Yazılar</a></li>
       <li><a href="arsiv.html">Arşiv</a></li>
       <li><a href="hakkimizda.html">Hakkımızda</a></li>
       <li><a href="iletisim.html">İletişim</a></li>
+      <!-- MENU-BITIS -->
     </ul>
   </nav>
 </header>
@@ -42,7 +46,7 @@
     <div class="konteyner">
       <span class="ust-baslik-etiketi">Sadece Yöneticiler İçin</span>
       <h1>Yönetim Paneli</h1>
-      <p class="bolum-aciklama" style="margin:0 auto;">Yazılar sayfasındaki içerikleri buradan ekleyip kaldırabilirsiniz. Kaydettiğiniz değişiklik doğrudan GitHub reposuna işlenir; site birkaç dakika içinde güncellenir.</p>
+      <p class="bolum-aciklama" style="margin:0 auto;">Sitenin yazılarını, medyasını, menüsünü, logosunu, renklerini, fontlarını ve sayfalarını buradan yönetin. Kaydettiğiniz her değişiklik doğrudan GitHub reposuna işlenir; site birkaç dakika içinde güncellenir. Veritabanı ya da ayrı bir sunucu yoktur — tüm işlemler mevcut HTML/CSS/JSON dosyalarını doğrudan günceller.</p>
     </div>
   </section>
 
@@ -83,38 +87,184 @@
 
         <div id="durum-mesaji" class="durum-mesaji"></div>
 
-        <!-- YENİ YAZI EKLE -->
-        <div class="iletisim-form" style="margin:24px 0;">
-          <h3 style="margin-bottom:20px;">Yeni Yazı Ekle</h3>
-
-          <div class="form-grup">
-            <label for="yeni-tur">Tür</label>
-            <select id="yeni-tur">
-              <option value="siir">Şiir</option>
-              <option value="makale">Makale</option>
-              <option value="deneme">Deneme</option>
-            </select>
-          </div>
-          <div class="form-grup">
-            <label for="yeni-baslik">Başlık</label>
-            <input type="text" id="yeni-baslik" placeholder="Yazının başlığı">
-          </div>
-          <div class="form-grup">
-            <label for="yeni-ozet">Özet / Tam Metin</label>
-            <textarea id="yeni-ozet" placeholder="Kısa özet ya da tam metin"></textarea>
-          </div>
-          <div class="form-grup">
-            <label for="yeni-tarih">Tarih</label>
-            <input type="text" id="yeni-tarih" placeholder="Örn. 12 Ağustos 2026">
-          </div>
-
-          <button type="button" class="btn btn-birincil" id="btn-ekle">Ekle ve Yayınla</button>
+        <!-- SEKME DÜĞMELERİ -->
+        <div class="filtre-grubu" role="tablist" aria-label="Yönetim bölümleri" style="margin:28px 0;">
+          <button class="filtre-btn sekme-btn aktif" data-hedef="sekme-yazilar">Yazılar</button>
+          <button class="filtre-btn sekme-btn" data-hedef="sekme-tema">Tema</button>
+          <button class="filtre-btn sekme-btn" data-hedef="sekme-menu">Menü + Logo</button>
+          <button class="filtre-btn sekme-btn" data-hedef="sekme-anasayfa">Ana Sayfa Metinleri</button>
+          <button class="filtre-btn sekme-btn" data-hedef="sekme-medya">Medya</button>
+          <button class="filtre-btn sekme-btn" data-hedef="sekme-sayfalar">Sayfalar</button>
         </div>
 
-        <!-- MEVCUT YAZILAR -->
-        <h3 style="margin:40px 0 16px;">Mevcut Yazılar</h3>
-        <div class="yazi-listesi" id="mevcut-liste">
-          <p style="color:var(--metin-silik);">Listeyi görmek için önce bağlantı ayarlarını girip "Kaydet ve Bağlan" butonuna basın.</p>
+        <!-- ================= SEKME: YAZILAR ================= -->
+        <div id="sekme-yazilar" class="sekme-panel gorunur">
+
+          <h3 style="margin:24px 0 16px;">Kategoriler</h3>
+          <div class="iletisim-form" style="margin-bottom:20px;">
+            <div class="form-grup">
+              <label for="yeni-kategori-ad">Yeni Kategori Adı</label>
+              <input type="text" id="yeni-kategori-ad" placeholder="Örn. Röportajlar">
+            </div>
+            <button type="button" class="btn btn-ikincil" id="btn-kategori-ekle">Kategori Ekle</button>
+          </div>
+          <div class="yazi-listesi" id="kategori-liste">
+            <p style="color:var(--metin-silik);">Bağlanmayı bekliyor…</p>
+          </div>
+
+          <h3 style="margin:40px 0 16px;">Yeni Yazı Ekle</h3>
+          <div class="iletisim-form" style="margin-bottom:20px;">
+            <div class="form-grup">
+              <label for="yeni-tur">Kategori</label>
+              <select id="yeni-tur"></select>
+            </div>
+            <div class="form-grup">
+              <label for="yeni-baslik">Başlık</label>
+              <input type="text" id="yeni-baslik" placeholder="Yazının başlığı">
+            </div>
+            <div class="form-grup">
+              <label for="yeni-ozet">Özet / Tam Metin</label>
+              <textarea id="yeni-ozet" placeholder="Kısa özet ya da tam metin"></textarea>
+            </div>
+            <div class="form-grup">
+              <label for="yeni-tarih">Tarih</label>
+              <input type="text" id="yeni-tarih" placeholder="Örn. 12 Ağustos 2026">
+            </div>
+            <button type="button" class="btn btn-birincil" id="btn-ekle">Ekle ve Yayınla</button>
+          </div>
+
+          <h3 style="margin:40px 0 16px;">Mevcut Yazılar</h3>
+          <div class="yazi-listesi" id="mevcut-liste">
+            <p style="color:var(--metin-silik);">Listeyi görmek için önce bağlantı ayarlarını girip "Kaydet ve Bağlan" butonuna basın.</p>
+          </div>
+        </div>
+
+        <!-- ================= SEKME: TEMA ================= -->
+        <div id="sekme-tema" class="sekme-panel">
+          <h3 style="margin:24px 0 16px;">Renkler</h3>
+          <div class="iletisim-form" id="tema-renkler" style="margin-bottom:20px;">
+            <p style="color:var(--metin-silik);">Bağlanmayı bekliyor…</p>
+          </div>
+
+          <h3 style="margin:32px 0 16px;">Fontlar</h3>
+          <div class="iletisim-form" id="tema-fontlar" style="margin-bottom:20px;">
+            <p style="color:var(--metin-silik);">Bağlanmayı bekliyor…</p>
+          </div>
+
+          <button type="button" class="btn btn-birincil" id="btn-tema-kaydet">Temayı Kaydet</button>
+        </div>
+
+        <!-- ================= SEKME: MENÜ + LOGO ================= -->
+        <div id="sekme-menu" class="sekme-panel">
+          <h3 style="margin:24px 0 16px;">Logo / Site Adı</h3>
+          <div class="iletisim-form" style="margin-bottom:20px;">
+            <div class="form-grup">
+              <label for="menu-logo-metin">Site Adı</label>
+              <input type="text" id="menu-logo-metin" placeholder="Hukuk-u Beşer">
+            </div>
+          </div>
+
+          <h3 style="margin:32px 0 16px;">Menü Bağlantıları</h3>
+          <div id="menu-ogeleri">
+            <p style="color:var(--metin-silik);">Bağlanmayı bekliyor…</p>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 28px;">
+            <button type="button" class="btn btn-ikincil" id="btn-menu-oge-ekle">Bağlantı Ekle</button>
+            <button type="button" class="btn btn-birincil" id="btn-menu-kaydet">Menü ve Logoyu Kaydet</button>
+          </div>
+          <p style="font-size:0.85rem; color:var(--metin-silik); line-height:1.7;">
+            Bu bölümde yapılan değişiklik; ana sayfa, yazılar, arşiv, hakkımızda, iletişim, yönetim sayfaları ve panelden oluşturduğunuz tüm ek sayfalardaki üst menüye, alt menüye, logoya ve site adına TEK bir işlemde uygulanır.
+          </p>
+        </div>
+
+        <!-- ================= SEKME: ANA SAYFA METİNLERİ ================= -->
+        <div id="sekme-anasayfa" class="sekme-panel">
+          <h3 style="margin:24px 0 16px;">Giriş (Hero) Bölümü</h3>
+          <div class="iletisim-form" style="margin-bottom:20px;">
+            <div class="form-grup">
+              <label for="anasayfa-hero-etiket">Üst Etiket</label>
+              <input type="text" id="anasayfa-hero-etiket">
+            </div>
+            <div class="form-grup">
+              <label for="anasayfa-hero-baslik">Ana Başlık</label>
+              <input type="text" id="anasayfa-hero-baslik">
+            </div>
+            <div class="form-grup">
+              <label for="anasayfa-hero-metin">Açıklama Metni</label>
+              <textarea id="anasayfa-hero-metin"></textarea>
+            </div>
+          </div>
+
+          <h3 style="margin:32px 0 16px;">Kısa Manifesto Bölümü</h3>
+          <div class="iletisim-form" style="margin-bottom:20px;">
+            <div class="form-grup">
+              <label for="anasayfa-manifesto-etiket">Üst Etiket</label>
+              <input type="text" id="anasayfa-manifesto-etiket">
+            </div>
+            <div class="form-grup">
+              <label for="anasayfa-manifesto-baslik">Başlık</label>
+              <input type="text" id="anasayfa-manifesto-baslik">
+            </div>
+            <div class="form-grup">
+              <label for="anasayfa-manifesto-metin">Metin</label>
+              <textarea id="anasayfa-manifesto-metin"></textarea>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-birincil" id="btn-anasayfa-kaydet">Ana Sayfa Metinlerini Kaydet</button>
+        </div>
+
+        <!-- ================= SEKME: MEDYA ================= -->
+        <div id="sekme-medya" class="sekme-panel">
+          <h3 style="margin:24px 0 16px;">Yeni Medya Ekle</h3>
+          <div class="iletisim-form" style="margin-bottom:20px;">
+            <div class="form-grup">
+              <label for="yeni-medya-tur">Tür</label>
+              <select id="yeni-medya-tur">
+                <option value="foto">Fotoğraf</option>
+                <option value="video">Video</option>
+              </select>
+            </div>
+            <div class="form-grup">
+              <label for="yeni-medya-baslik">Başlık / Açıklama</label>
+              <input type="text" id="yeni-medya-baslik" placeholder="Örn. Panel Konuşması">
+            </div>
+            <div class="form-grup">
+              <label for="yeni-medya-dosya">Dosya (isteğe bağlı — boş bırakılırsa yer tutucu gösterilir)</label>
+              <input type="file" id="yeni-medya-dosya" accept="image/*,video/*">
+            </div>
+            <div class="form-grup" style="display:flex; align-items:center; gap:10px;">
+              <input type="checkbox" id="yeni-medya-genis" style="width:auto;">
+              <label for="yeni-medya-genis" style="margin:0;">Geniş kart olarak göster</label>
+            </div>
+            <button type="button" class="btn btn-birincil" id="btn-medya-ekle">Ekle ve Yayınla</button>
+          </div>
+
+          <h3 style="margin:40px 0 16px;">Mevcut Medya</h3>
+          <div class="yazi-listesi" id="medya-liste">
+            <p style="color:var(--metin-silik);">Listeyi görmek için önce bağlantı ayarlarını girip "Kaydet ve Bağlan" butonuna basın.</p>
+          </div>
+        </div>
+
+        <!-- ================= SEKME: SAYFALAR ================= -->
+        <div id="sekme-sayfalar" class="sekme-panel">
+          <h3 style="margin:24px 0 16px;">Yeni Sayfa Oluştur</h3>
+          <div class="iletisim-form" style="margin-bottom:20px;">
+            <div class="form-grup">
+              <label for="yeni-sayfa-dosya">Dosya Adı</label>
+              <input type="text" id="yeni-sayfa-dosya" placeholder="Örn. duyurular.html">
+            </div>
+            <div class="form-grup">
+              <label for="yeni-sayfa-baslik">Sayfa Başlığı</label>
+              <input type="text" id="yeni-sayfa-baslik" placeholder="Örn. Duyurular">
+            </div>
+            <button type="button" class="btn btn-birincil" id="btn-sayfa-ekle">Sayfayı Oluştur</button>
+          </div>
+
+          <h3 style="margin:40px 0 16px;">Mevcut Sayfalar</h3>
+          <div class="yazi-listesi" id="sayfa-liste">
+            <p style="color:var(--metin-silik);">Listeyi görmek için önce bağlantı ayarlarını girip "Kaydet ve Bağlan" butonuna basın.</p>
+          </div>
         </div>
 
       </div>
@@ -124,15 +274,17 @@
 
 <footer class="site-footer">
   <div class="konteyner">
-    <span class="marka-ad">Hukuk-u Beşer</span>
+    <span class="marka-ad"><!-- SITEADI-BASLA -->Hukuk-u Beşer<!-- SITEADI-BITIS --></span>
     <ul class="footer-menu">
+      <!-- MENU-BASLA -->
       <li><a href="index.html">Ana Sayfa</a></li>
       <li><a href="yazilar.html">Yazılar</a></li>
       <li><a href="arsiv.html">Arşiv</a></li>
       <li><a href="hakkimizda.html">Hakkımızda</a></li>
       <li><a href="iletisim.html">İletişim</a></li>
+      <!-- MENU-BITIS -->
     </ul>
-    <p class="footer-alt">© 2026 Hukuk-u Beşer. Tüm hakları saklıdır.</p>
+    <p class="footer-alt"><!-- TELIF-BASLA -->© 2026 Hukuk-u Beşer. Tüm hakları saklıdır.<!-- TELIF-BITIS --></p>
   </div>
 </footer>
 
