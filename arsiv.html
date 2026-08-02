@@ -71,7 +71,7 @@
 <script src="assets/js/content-loader.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  renderCollection("fotograf-listesi", "fotoğrafçılar", (entry) => {
+ renderCollection("fotograf-listesi", "fotograflar", (entry) => {
     const isVideo = entry.data.category === "Video" && entry.data.video_url;
     if (isVideo) {
       return `
