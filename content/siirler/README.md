@@ -1,1 +1,0 @@
-Şiirler klasörü
