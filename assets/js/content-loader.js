@@ -1,7 +1,7 @@
 const CMS_CONFIG = {
   owner: "hukukubeserresmi-cmyk",
   repo: "HUKUKU-BESER",
-  branch: "ana",
+  branch: "main",
   cacheMinutes: 10,
 };
 
