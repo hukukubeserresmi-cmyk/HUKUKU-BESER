@@ -45,9 +45,9 @@
   <section>
     <div class="konteyner" style="padding:20px 32px 120px;">
       <div class="galeri-sekmeler">
-        <button class="filtre-btn aktif">Tümü</button>
-        <button class="filtre-btn">Fotoğraf</button>
-        <button class="filtre-btn">Video</button>
+        <button class="filtre-btn aktif" data-kategori="Tümü">Tümü</button>
+        <button class="filtre-btn" data-kategori="Fotoğraf">Fotoğraf</button>
+        <button class="filtre-btn" data-kategori="Video">Video</button>
       </div>
       <div class="medya-izgara" id="fotograf-listesi"></div>
     </div>
@@ -66,30 +66,78 @@
     <p class="footer-alt">© 2026 Hukuk-u Beşer. Tüm hakları saklıdır.</p>
   </div>
 </footer>
+
+<!-- Büyütme (lightbox) katmanı -->
+<div id="medya-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:1000;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;">
+  <div id="medya-overlay-icerik" style="max-width:90vw;max-height:90vh;"></div>
+</div>
+
+<style>
+  .medya-oge{ cursor:pointer; transition:transform .2s ease, box-shadow .2s ease; }
+  .medya-oge:hover{ transform:scale(1.03); box-shadow:0 8px 24px rgba(0,0,0,.4); }
+</style>
+
 <script src="yildizlar.js"></script>
 <script src="isik.js"></script>
 <script src="assets/js/content-loader.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
- renderCollection("fotograf-listesi", "fotograflar", (entry) => {
-    const isVideo = entry.data.category === "Video" && entry.data.video_url;
+  renderCollection("fotograf-listesi", "fotograflar", (entry) => {
+    const kategori = entry.data.category || "";
+    const isVideo = kategori === "Video" && entry.data.video_url;
     if (isVideo) {
       return `
-        <div class="medya-oge">
+        <div class="medya-oge" data-kategori="Video">
           <span class="medya-oynatici-rozet">Video</span>
           <iframe src="${entry.data.video_url}" style="width:100%;height:100%;border:0;" allowfullscreen title="${entry.data.title || ''}"></iframe>
         </div>`;
     }
     return `
-      <div class="medya-oge">
+      <div class="medya-oge" data-kategori="Fotoğraf">
         <img src="${entry.data.image}" alt="${entry.data.title || ''}" style="width:100%;height:100%;object-fit:cover;">
       </div>`;
+  }).then(() => {
+    aktifFiltreyiUygula();
   });
-});
-document.querySelectorAll('.galeri-sekmeler .filtre-btn').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    document.querySelectorAll('.galeri-sekmeler .filtre-btn').forEach(function(b){ b.classList.remove('aktif'); });
-    btn.classList.add('aktif');
+
+  // Filtre butonları
+  document.querySelectorAll('.galeri-sekmeler .filtre-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.galeri-sekmeler .filtre-btn').forEach(function(b){ b.classList.remove('aktif'); });
+      btn.classList.add('aktif');
+      aktifFiltreyiUygula();
+    });
+  });
+
+  function aktifFiltreyiUygula(){
+    const aktifBtn = document.querySelector('.galeri-sekmeler .filtre-btn.aktif');
+    const secilen = aktifBtn ? aktifBtn.dataset.kategori : 'Tümü';
+    document.querySelectorAll('#fotograf-listesi .medya-oge').forEach(function(oge){
+      const goster = (secilen === 'Tümü' || oge.dataset.kategori === secilen);
+      oge.style.display = goster ? '' : 'none';
+    });
+  }
+
+  // Büyütme (lightbox)
+  const overlay = document.getElementById('medya-overlay');
+  const overlayIcerik = document.getElementById('medya-overlay-icerik');
+
+  document.getElementById('fotograf-listesi').addEventListener('click', function(e){
+    const oge = e.target.closest('.medya-oge');
+    if (!oge) return;
+    const img = oge.querySelector('img');
+    const iframe = oge.querySelector('iframe');
+    if (img) {
+      overlayIcerik.innerHTML = `<img src="${img.src}" alt="${img.alt}" style="max-width:90vw;max-height:90vh;display:block;border-radius:8px;">`;
+    } else if (iframe) {
+      overlayIcerik.innerHTML = `<iframe src="${iframe.src}" style="width:80vw;height:45vw;max-height:90vh;border:0;border-radius:8px;" allowfullscreen></iframe>`;
+    }
+    overlay.style.display = 'flex';
+  });
+
+  overlay.addEventListener('click', function(){
+    overlay.style.display = 'none';
+    overlayIcerik.innerHTML = '';
   });
 });
 </script>
