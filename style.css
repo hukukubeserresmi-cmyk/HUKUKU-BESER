@@ -726,6 +726,52 @@ html.aydinlik-mod .siir-cerceve {
   color: var(--metin-ikincil);
 }
 
+.medya-oge.tiklanabilir { cursor: zoom-in; }
+.medya-oge:not(.tiklanabilir) { cursor: default; }
+
+.medya-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(5, 7, 13, 0.92);
+  backdrop-filter: blur(6px);
+}
+.medya-lightbox.acik { display: flex; }
+
+.lightbox-icerik { max-width: 92vw; max-height: 88vh; }
+.lightbox-icerik img,
+.lightbox-icerik video {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 6px;
+  box-shadow: var(--golge);
+  display: block;
+}
+
+.lightbox-kapat {
+  position: fixed;
+  top: 22px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--kenarlik);
+  background: var(--lacivert);
+  color: var(--metin-ana);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+.lightbox-kapat:hover { border-color: var(--altin-2); color: var(--altin-2); }
+
 .medya-oynatici-rozet {
   position: absolute;
   top: 14px;
