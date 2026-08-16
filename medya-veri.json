@@ -1,0 +1,11 @@
+[
+  {"id":"medya-1","tur":"video","baslik":"Video Yer Tutucu · 16:9","genis":true,"dosya":null},
+  {"id":"medya-2","tur":"foto","baslik":"Fotoğraf","genis":false,"dosya":null},
+  {"id":"medya-3","tur":"foto","baslik":"Fotoğraf","genis":false,"dosya":null},
+  {"id":"medya-4","tur":"video","baslik":"Video Yer Tutucu","genis":false,"dosya":null},
+  {"id":"medya-5","tur":"foto","baslik":"Fotoğraf","genis":false,"dosya":null},
+  {"id":"medya-6","tur":"foto","baslik":"Fotoğraf · Panoramik","genis":true,"dosya":null},
+  {"id":"medya-7","tur":"foto","baslik":"Fotoğraf","genis":false,"dosya":null},
+  {"id":"medya-8","tur":"video","baslik":"Video Yer Tutucu","genis":false,"dosya":null},
+  {"id":"medya-9","tur":"foto","baslik":"Fotoğraf","genis":false,"dosya":null}
+]

@@ -22,17 +22,21 @@
 <header class="site-header">
   <nav class="nav-cubugu">
     <a href="index.html" class="marka">
+      <!-- LOGO-BASLA -->
       <span class="marka-ad">Hukuk-u Beşer</span>
+      <!-- LOGO-BITIS -->
     </a>
     <button class="nav-toggle" aria-label="Menüyü aç/kapat" onclick="document.querySelector('.nav-menu').classList.toggle('acik')">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-menu">
+      <!-- MENU-BASLA -->
       <li><a href="index.html">Ana Sayfa</a></li>
       <li><a href="yazilar.html" class="aktif">Yazılar</a></li>
       <li><a href="arsiv.html">Arşiv</a></li>
       <li><a href="hakkimizda.html">Hakkımızda</a></li>
       <li><a href="iletisim.html">İletişim</a></li>
+      <!-- MENU-BITIS -->
     </ul>
   </nav>
 </header>
@@ -49,95 +53,11 @@
   <section id="eser-bolumu">
     <div class="konteyner" style="padding:56px 32px 120px;">
 
-      <div class="filtre-grubu" role="tablist" aria-label="Eser türü filtreleri">
-        <button class="filtre-btn aktif" data-hedef="panel-siirler" onclick="turSec('panel-siirler', this)">Şiirler</button>
-        <button class="filtre-btn" data-hedef="panel-makaleler" onclick="turSec('panel-makaleler', this)">Makaleler</button>
-        <button class="filtre-btn" data-hedef="panel-denemeler" onclick="turSec('panel-denemeler', this)">Denemeler</button>
+      <div class="filtre-grubu" role="tablist" aria-label="Eser türü filtreleri" id="eser-filtre-grubu">
+        <p style="color:var(--metin-silik);">Yükleniyor…</p>
       </div>
 
-      <!-- ŞİİRLER -->
-      <div id="panel-siirler" class="yazi-panel gorunur">
-        <h2 class="bolum-basligi" style="font-size:1.5rem; margin-top:0;">Şiirler</h2>
-        <div class="yazi-listesi">
-          <div class="yazi-satiri">
-            <div>
-              <h4>Sükût Bir Cevap Değildir</h4>
-              <p>Yer tutucu metin — bu bölüme şiirin tam metni eklenecektir.</p>
-            </div>
-            <span class="yazi-tarih">Yakında</span>
-          </div>
-          <div class="yazi-satiri">
-            <div>
-              <h4>Mazlumun Defteri</h4>
-              <p>Yer tutucu metin — bu bölüme şiirin tam metni eklenecektir.</p>
-            </div>
-            <span class="yazi-tarih">Yakında</span>
-          </div>
-          <div class="yazi-satiri">
-            <div>
-              <h4>Adaletin Gölgesinde</h4>
-              <p>Yer tutucu metin — bu bölüme şiirin tam metni eklenecektir.</p>
-            </div>
-            <span class="yazi-tarih">Yakında</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- MAKALELER -->
-      <div id="panel-makaleler" class="yazi-panel">
-        <h2 class="bolum-basligi" style="font-size:1.5rem; margin-top:0;">Makaleler</h2>
-        <div class="yazi-listesi">
-          <div class="yazi-satiri">
-            <div>
-              <h4>Hukuk-u Beşer'in Kısa Tarihi</h4>
-              <p>Yer tutucu metin — bu bölüme makalenin tam metni eklenecektir.</p>
-            </div>
-            <span class="yazi-tarih">Yakında</span>
-          </div>
-          <div class="yazi-satiri">
-            <div>
-              <h4>Adalet ve Vicdan Üzerine</h4>
-              <p>Yer tutucu metin — bu bölüme makalenin tam metni eklenecektir.</p>
-            </div>
-            <span class="yazi-tarih">Yakında</span>
-          </div>
-          <div class="yazi-satiri">
-            <div>
-              <h4>Söz ve Sorumluluk</h4>
-              <p>Yer tutucu metin — bu bölüme makalenin tam metni eklenecektir.</p>
-            </div>
-            <span class="yazi-tarih">Yakında</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- DENEMELER -->
-      <div id="panel-denemeler" class="yazi-panel">
-        <h2 class="bolum-basligi" style="font-size:1.5rem; margin-top:0;">Denemeler</h2>
-        <div class="yazi-listesi">
-          <div class="yazi-satiri">
-            <div>
-              <h4>Hafızanın Sorumluluğu</h4>
-              <p>Yer tutucu metin — bu bölüme denemenin tam metni eklenecektir.</p>
-            </div>
-            <span class="yazi-tarih">Yakında</span>
-          </div>
-          <div class="yazi-satiri">
-            <div>
-              <h4>Kayıtsızlığın Bedeli</h4>
-              <p>Yer tutucu metin — bu bölüme denemenin tam metni eklenecektir.</p>
-            </div>
-            <span class="yazi-tarih">Yakında</span>
-          </div>
-          <div class="yazi-satiri">
-            <div>
-              <h4>Bir Satırlık Direniş</h4>
-              <p>Yer tutucu metin — bu bölüme denemenin tam metni eklenecektir.</p>
-            </div>
-            <span class="yazi-tarih">Yakında</span>
-          </div>
-        </div>
-      </div>
+      <div id="eser-panelleri"></div>
 
     </div>
   </section>
@@ -145,15 +65,17 @@
 
 <footer class="site-footer">
   <div class="konteyner">
-    <span class="marka-ad">Hukuk-u Beşer</span>
+    <span class="marka-ad"><!-- SITEADI-BASLA -->Hukuk-u Beşer<!-- SITEADI-BITIS --></span>
     <ul class="footer-menu">
+      <!-- MENU-BASLA -->
       <li><a href="index.html">Ana Sayfa</a></li>
       <li><a href="yazilar.html">Yazılar</a></li>
       <li><a href="arsiv.html">Arşiv</a></li>
       <li><a href="hakkimizda.html">Hakkımızda</a></li>
       <li><a href="iletisim.html">İletişim</a></li>
+      <!-- MENU-BITIS -->
     </ul>
-    <p class="footer-alt">© 2026 Hukuk-u Beşer. Tüm hakları saklıdır.</p>
+    <p class="footer-alt"><!-- TELIF-BASLA -->© 2026 Hukuk-u Beşer. Tüm hakları saklıdır.<!-- TELIF-BITIS --></p>
   </div>
 </footer>
 
@@ -166,10 +88,83 @@ function turSec(hedefId, dugme) {
 
   document.querySelectorAll('.yazi-panel').forEach(function(p){ p.classList.remove('gorunur'); });
   var hedef = document.getElementById(hedefId);
+  if (!hedef) return;
   hedef.classList.add('gorunur');
 
   hedef.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+(function () {
+  "use strict";
+
+  function kacis(s) {
+    var d = document.createElement("div");
+    d.textContent = s == null ? "" : String(s);
+    return d.innerHTML;
+  }
+
+  function listeyeCiz(kapId, ogeler) {
+    var kap = document.getElementById(kapId);
+    if (!kap) return;
+    if (!ogeler.length) {
+      kap.innerHTML = '<p style="color:var(--metin-silik);">Henüz yazı eklenmedi.</p>';
+      return;
+    }
+    kap.innerHTML = ogeler.map(function (oge) {
+      return (
+        '<div class="yazi-satiri">' +
+          '<div>' +
+            '<h4>' + kacis(oge.baslik) + '</h4>' +
+            '<p>' + kacis(oge.ozet) + '</p>' +
+          '</div>' +
+          '<span class="yazi-tarih">' + kacis(oge.tarih) + '</span>' +
+        '</div>'
+      );
+    }).join("");
+  }
+
+  Promise.all([
+    fetch("kategoriler-veri.json", { cache: "no-store" }).then(function (r) { return r.json(); }),
+    fetch("yazilar-veri.json", { cache: "no-store" }).then(function (r) { return r.json(); })
+  ]).then(function (sonuclar) {
+    var kategoriler = sonuclar[0];
+    var yazilar = sonuclar[1];
+
+    var filtreKap = document.getElementById("eser-filtre-grubu");
+    var panelKap = document.getElementById("eser-panelleri");
+
+    if (!kategoriler.length) {
+      filtreKap.innerHTML = '<p style="color:var(--metin-silik);">Henüz kategori tanımlanmadı.</p>';
+      return;
+    }
+
+    filtreKap.innerHTML = kategoriler.map(function (kat, i) {
+      var panelId = "panel-" + kacis(kat.id);
+      return (
+        '<button class="filtre-btn' + (i === 0 ? ' aktif' : '') + '" data-hedef="' + panelId + '" ' +
+        'onclick="turSec(\'' + panelId + '\', this)">' + kacis(kat.ad) + '</button>'
+      );
+    }).join("");
+
+    panelKap.innerHTML = kategoriler.map(function (kat, i) {
+      var panelId = "panel-" + kacis(kat.id);
+      return (
+        '<div id="' + panelId + '" class="yazi-panel' + (i === 0 ? ' gorunur' : '') + '">' +
+          '<h2 class="bolum-basligi" style="font-size:1.5rem; margin-top:0;">' + kacis(kat.ad) + '</h2>' +
+          '<div class="yazi-listesi" id="liste-' + kacis(kat.id) + '"></div>' +
+        '</div>'
+      );
+    }).join("");
+
+    kategoriler.forEach(function (kat) {
+      var ogeler = yazilar.filter(function (y) { return y.tur === kat.id; });
+      listeyeCiz("liste-" + kat.id, ogeler);
+    });
+  }).catch(function () {
+    var filtreKap = document.getElementById("eser-filtre-grubu");
+    if (filtreKap) filtreKap.innerHTML = '<p style="color:var(--metin-silik);">Yazılar şu an yüklenemedi.</p>';
+  });
+})();
 </script>
 
 </body>
