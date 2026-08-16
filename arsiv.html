@@ -67,6 +67,11 @@
   </section>
 </main>
 
+<div class="medya-lightbox" id="medya-lightbox" aria-hidden="true">
+  <button class="lightbox-kapat" id="lightbox-kapat" type="button" aria-label="Kapat">&times;</button>
+  <div class="lightbox-icerik" id="lightbox-icerik"></div>
+</div>
+
 <footer class="site-footer">
   <div class="konteyner">
     <span class="marka-ad"><!-- SITEADI-BASLA -->Hukuk-u Beşer<!-- SITEADI-BITIS --></span>
@@ -118,7 +123,28 @@
         '</div>';
     }
 
-    return '<div class="medya-oge' + genisSinif + '" data-tur="' + kacis(oge.tur) + '">' + rozet + icIcerik + '</div>';
+    var tiklanabilirSinif = oge.dosya ? " tiklanabilir" : "";
+    return '<div class="medya-oge' + genisSinif + tiklanabilirSinif + '" data-tur="' + kacis(oge.tur) + '" data-dosya="' + (oge.dosya ? kacis(oge.dosya) : "") + '" data-medya-tur="' + kacis(oge.tur) + '" data-baslik="' + kacis(oge.baslik) + '">' + rozet + icIcerik + '</div>';
+  }
+
+  function lightboxAc(dosya, tur, baslik) {
+    var kutu = document.getElementById("medya-lightbox");
+    var icerik = document.getElementById("lightbox-icerik");
+    if (!kutu || !icerik || !dosya) return;
+    icerik.innerHTML = tur === "video"
+      ? '<video src="' + kacis(dosya) + '" controls autoplay></video>'
+      : '<img src="' + kacis(dosya) + '" alt="' + kacis(baslik) + '">';
+    kutu.classList.add("acik");
+    kutu.setAttribute("aria-hidden", "false");
+  }
+
+  function lightboxKapat() {
+    var kutu = document.getElementById("medya-lightbox");
+    var icerik = document.getElementById("lightbox-icerik");
+    if (!kutu) return;
+    kutu.classList.remove("acik");
+    kutu.setAttribute("aria-hidden", "true");
+    if (icerik) icerik.innerHTML = "";
   }
 
   function ciz() {
@@ -130,6 +156,12 @@
       return;
     }
     kap.innerHTML = gosterilecek.map(ogeCiz).join("");
+
+    kap.querySelectorAll(".medya-oge.tiklanabilir").forEach(function (el) {
+      el.addEventListener("click", function () {
+        lightboxAc(el.getAttribute("data-dosya"), el.getAttribute("data-medya-tur"), el.getAttribute("data-baslik"));
+      });
+    });
   }
 
   document.querySelectorAll('.galeri-sekmeler .filtre-btn').forEach(function (btn) {
@@ -151,6 +183,18 @@
       var kap = document.getElementById("medya-izgara");
       if (kap) kap.innerHTML = '<p style="color:var(--metin-silik);">Medya şu an yüklenemedi.</p>';
     });
+
+  var lightboxKutu = document.getElementById("medya-lightbox");
+  var kapatBtn = document.getElementById("lightbox-kapat");
+  if (kapatBtn) kapatBtn.addEventListener("click", lightboxKapat);
+  if (lightboxKutu) {
+    lightboxKutu.addEventListener("click", function (e) {
+      if (e.target === lightboxKutu) lightboxKapat();
+    });
+  }
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") lightboxKapat();
+  });
 })();
 </script>
 
