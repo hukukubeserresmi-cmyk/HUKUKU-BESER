@@ -1,5 +1,18 @@
 [
-  {"id":"siir","ad":"Şiirler"},
-  {"id":"makale","ad":"Makaleler"},
-  {"id":"deneme","ad":"Denemeler"}
+  {
+    "id": "siir",
+    "ad": "Şiirler"
+  },
+  {
+    "id": "makale",
+    "ad": "Makaleler"
+  },
+  {
+    "id": "deneme",
+    "ad": "Denemeler"
+  },
+  {
+    "id": "maka",
+    "ad": "maka"
+  }
 ]
