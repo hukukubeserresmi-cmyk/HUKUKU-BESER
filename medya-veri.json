@@ -21,9 +21,9 @@
     "dosya": null
   },
   {
-    "id": "medya-5",
-    "tur": "foto",
-    "baslik": "Fotoğraf",
+    "id": "medya-4",
+    "tur": "video",
+    "baslik": "Video Yer Tutucu",
     "genis": false,
     "dosya": null
   },
