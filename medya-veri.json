@@ -28,10 +28,10 @@
     "dosya": null
   },
   {
-    "id": "medya-6",
+    "id": "medya-5",
     "tur": "foto",
-    "baslik": "Fotoğraf · Panoramik",
-    "genis": true,
+    "baslik": "Fotoğraf",
+    "genis": false,
     "dosya": null
   },
   {
