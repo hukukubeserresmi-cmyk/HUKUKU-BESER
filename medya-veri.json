@@ -1,5 +1,12 @@
 [
   {
+    "id": "medya-2",
+    "tur": "foto",
+    "baslik": "Fotoğraf",
+    "genis": false,
+    "dosya": null
+  },
+  {
     "id": "medya-3",
     "tur": "foto",
     "baslik": "Fotoğraf",
@@ -47,12 +54,5 @@
     "baslik": "enver",
     "genis": false,
     "dosya": "medya/foto-1788378066504.jpg"
-  },
-  {
-    "id": "video-1788378135496",
-    "tur": "video",
-    "baslik": "filistyin",
-    "genis": true,
-    "dosya": "medya/video-1788378135496.mp4"
   }
 ]
