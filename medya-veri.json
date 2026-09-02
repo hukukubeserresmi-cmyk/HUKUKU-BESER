@@ -68,5 +68,12 @@
     "baslik": "Mısır",
     "genis": true,
     "dosya": "medya/foto-1786901425526.jpg"
+  },
+  {
+    "id": "foto-1788367908272",
+    "tur": "foto",
+    "baslik": "ali",
+    "genis": false,
+    "dosya": "medya/foto-1788367908272.jpg"
   }
 ]
