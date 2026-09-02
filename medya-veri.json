@@ -21,10 +21,10 @@
     "dosya": "medya/foto-1788374782235.jpg"
   },
   {
-    "id": "foto-1788378066504",
+    "id": "foto-1788378031486",
     "tur": "foto",
-    "baslik": "enver",
-    "genis": false,
-    "dosya": "medya/foto-1788378066504.jpg"
+    "baslik": "heyet",
+    "genis": true,
+    "dosya": "medya/foto-1788378031486.jpg"
   }
 ]
