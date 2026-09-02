@@ -1,12 +1,5 @@
 [
   {
-    "id": "medya-1",
-    "tur": "video",
-    "baslik": "Video Yer Tutucu · 16:9",
-    "genis": true,
-    "dosya": null
-  },
-  {
     "id": "medya-2",
     "tur": "foto",
     "baslik": "Fotoğraf",
@@ -22,6 +15,13 @@
   },
   {
     "id": "medya-5",
+    "tur": "foto",
+    "baslik": "Fotoğraf",
+    "genis": false,
+    "dosya": null
+  },
+  {
+    "id": "medya-7",
     "tur": "foto",
     "baslik": "Fotoğraf",
     "genis": false,
