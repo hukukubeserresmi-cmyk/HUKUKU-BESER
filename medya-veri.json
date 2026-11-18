@@ -40,5 +40,12 @@
     "baslik": "fd",
     "genis": false,
     "dosya": "medya/foto-1794992868045.jpg"
+  },
+  {
+    "id": "video-1794993063021",
+    "tur": "video",
+    "baslik": "d",
+    "genis": true,
+    "dosya": "medya/video-1794993063021.mp4"
   }
 ]
