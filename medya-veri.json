@@ -26,5 +26,12 @@
     "baslik": "kongo",
     "genis": true,
     "dosya": "medya/foto-1794991144759.webp"
+  },
+  {
+    "id": "foto-1794992759496",
+    "tur": "foto",
+    "baslik": "k",
+    "genis": false,
+    "dosya": "medya/foto-1794992759496.jpg"
   }
 ]
