@@ -33,5 +33,12 @@
     "baslik": "aşice",
     "genis": false,
     "dosya": "medya/foto-1794992813272.jpg"
+  },
+  {
+    "id": "foto-1794992868045",
+    "tur": "foto",
+    "baslik": "fd",
+    "genis": false,
+    "dosya": "medya/foto-1794992868045.jpg"
   }
 ]
